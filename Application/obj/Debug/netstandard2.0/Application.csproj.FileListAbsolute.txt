@@ -1,0 +1,13 @@
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Application.deps.json
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Application.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.csprojAssemblyReference.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.AssemblyInfoInputs.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.AssemblyInfo.cs
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Application.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Domain.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Persistence.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Domain.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\bin\Debug\netstandard2.0\Persistence.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.csproj.CopyComplete
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Application\obj\Debug\netstandard2.0\Application.pdb

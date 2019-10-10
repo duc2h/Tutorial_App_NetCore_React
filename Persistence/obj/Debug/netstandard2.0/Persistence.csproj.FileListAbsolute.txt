@@ -1,0 +1,11 @@
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\bin\Debug\netstandard2.0\Domain.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.csprojAssemblyReference.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.AssemblyInfoInputs.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.AssemblyInfo.cs
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\bin\Debug\netstandard2.0\Persistence.deps.json
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\bin\Debug\netstandard2.0\Persistence.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\bin\Debug\netstandard2.0\Persistence.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\bin\Debug\netstandard2.0\Domain.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.csproj.CopyComplete
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Persistence\obj\Debug\netstandard2.0\Persistence.pdb

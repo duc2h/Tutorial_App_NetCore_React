@@ -1,0 +1,8 @@
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\bin\Debug\netstandard2.0\Domain.deps.json
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\bin\Debug\netstandard2.0\Domain.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\bin\Debug\netstandard2.0\Domain.pdb
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\obj\Debug\netstandard2.0\Domain.dll
+D:\Project_HoangDuc\Tutorial_App_NetCore_React\Domain\obj\Debug\netstandard2.0\Domain.pdb
