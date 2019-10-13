@@ -6,18 +6,18 @@ Project MovieWrapper là 1 thư viện chung dùng vào mục đích lấy dữ 
 
 ## Cấu trúc project và business code:
 
-* Bao gồm project library thực hiện việc lấy dữ liệu từ các nhà cung cấp và convert về chung định dạng. Project test dùng để kiểm tra các business code.
+Bao gồm project library thực hiện việc lấy dữ liệu từ các nhà cung cấp và convert về chung định dạng. Project test dùng để kiểm tra các business code.
 
 ![Annotation 2019-10-13 121347](https://user-images.githubusercontent.com/36435846/66711286-21973f80-edb3-11e9-9399-45bfca1c2d9e.png)
 
-** Project MovieWrapper : Có các model dùng để định dạng dữ liệu, các service dùng để xử lý các chi tiết business theo từng nhà cung cấp, helpers là nơi cung cấp các business chung cho service.
+* Project MovieWrapper : Có các model dùng để định dạng dữ liệu, các service dùng để xử lý các chi tiết business theo từng nhà cung cấp, helpers là nơi cung cấp các business chung cho service.
 
-** Project MovieWrapper.Test : bao gồm các unit test cho các service của những nhà cung cấp.
+* Project MovieWrapper.Test : bao gồm các unit test cho các service của những nhà cung cấp.
 
-* Để lấy được url để lấy dữ liệu từ các nhà cung cấp thì cần dùng tới "Charles tool". Charles tool được dùng để xem những request cũng như respone khi chúng ta tương tác với trình duyệt hoặc mobile app. Thông tin và cách sử dụng Charles tool: https://medium.com/@hackupstate/using-charles-proxy-to-debug-android-ssl-traffic-e61fc38760f7
+Để lấy được url để lấy dữ liệu từ các nhà cung cấp thì cần dùng tới "Charles tool". Charles tool được dùng để xem những request cũng như respone khi chúng ta tương tác với trình duyệt hoặc mobile app. Thông tin và cách sử dụng Charles tool: https://medium.com/@hackupstate/using-charles-proxy-to-debug-android-ssl-traffic-e61fc38760f7
 
-* Project library MovieWrapper :
- - Với các interface như IVendorGalaxyService, IVendorCGVService, IVendorBHDService sẽ có các method như nhau nhưng kiểu trả về dữ liệu khác nhau ví dụ:
+#### Project library MovieWrapper :
+Với các interface như IVendorGalaxyService, IVendorCGVService, IVendorBHDService sẽ có các method như nhau nhưng kiểu trả về dữ liệu khác nhau ví dụ:
 ```
 public interface IVendorGalaxyService
     {
@@ -27,9 +27,9 @@ public interface IVendorGalaxyService
     }
 ```
 
-- Nhưng trong mỗi VendorGalaxyService, VendorCGVService, VendorBHDService được implements bởi interface tương ứng trên thì có những kiểu xử lý khác nhau:
+Nhưng trong mỗi VendorGalaxyService, VendorCGVService, VendorBHDService được implements bởi interface tương ứng trên thì có những kiểu xử lý khác nhau:
 ##### VendorGalaxyService:
-* Đây là hàm trả về địa điểm và thời giam chiếu phim: 
+Đây là hàm trả về địa điểm và thời giam chiếu phim: 
 ```
 public SessionMovie GetSessionMovie(string id, DateTime date)
         {
@@ -135,10 +135,63 @@ foreach (var cinemaXML in cinemaXMLs)
 }
 ```
 
-* Project MovieWrapper.Test:
+#### Project MovieWrapper.Test:
 
-Chúng ta sử dụng Moq 
+Chúng ta sử dụng thư viện Moq cho việc viết unit test và mock object.
+```
+private Mock<IVendorBHDService> _service;
 
+[TestInitialize]
+public void Init()
+{
+    var bhdService = new VendorBHDService();
+    _service = new Mock<IVendorBHDService>();
+    _service.Setup(m => m.GetShowingMovie()).Returns(bhdService.GetShowingMovie);
+    _service.Setup(m => m.GetDetail(It.IsAny<string>())).Returns(bhdService.GetDetail("HO00001516"));
+    _service.Setup(m => m.GetSessionMovie(It.IsAny<string>(), It.IsAny<DateTime>()))
+        .Returns(bhdService.GetSessionMovie("HO00001789", DateTime.Today));
+}
+```
+Như đoạn code trên khi run test 1 class, hàm init() sẽ chạy đầu tiên và Setup cho mock object.
+
+```
+[TestMethod]
+public void GetShowingMovie()
+{
+    var showingMovies = _service.Object.GetShowingMovie();
+
+    Assert.IsNotNull(showingMovies);
+    Assert.AreNotEqual(0, showingMovies.Count);
+}
+
+[TestMethod]
+public void GetDetail()
+{
+    var movie = _service.Object.GetDetail(It.IsAny<string>());
+
+    Assert.IsNotNull(movie);
+    Assert.AreEqual("HO00001516", movie.Id);
+    Assert.AreEqual("joker", movie.Name.ToLower());
+    Assert.AreEqual(DateTime.Parse("2019-10-04"), movie.ReleaseDate);
+}
+
+[TestMethod]
+public void GetSessionMovie()
+{
+    var sessionMovie = _service.Object.GetSessionMovie(It.IsAny<string>(), It.IsAny<DateTime>());
+
+    Assert.IsNotNull(sessionMovie);
+    Assert.AreEqual(DateTime.Today, sessionMovie.Date);
+}
+```
+
+Chúng ta sử dụng attribute ```[TestMethod]``` để định nghĩa khi muốn kiểm tra 1 phương thức nào đó. Dùng Assert class để kiểm tra điều kiện các giá trị có trùng khớp hay không, nếu không sẽ throw expection.
+
+Các nguyên tắc của SOLID được sử dụng vào Project trên : 
+
+* Single responsibility principle
+* Interface segregation principle
+* Dependency inversion principle
 
 
 
